@@ -31,7 +31,7 @@ int solve1(void)
     return forw * depth;
 };
 
-int solve2()
+int solve2(void)
 {
     std::ifstream myfile("input.txt");
     std::string command, value;
