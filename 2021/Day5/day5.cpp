@@ -18,89 +18,36 @@ void checkStraight(int startX, int endX, int startY, int endY, std::vector<std::
 {
   if (startX == endX)
   {
-    if (startY < endY)
+    while (startY != endY)
     {
-      while (startY <= endY)
-      {
-        map[startY][startX]++;
-        startY++;
-      }
+      map[startY][startX]++;
+      startY > endY ? startY-- : startY++;
     }
-    else
-    {
-      while (startY >= endY)
-      {
-        map[startY][startX]++;
-        startY--;
-      }
-    }
+    map[startY][startX]++;
   }
   else if (startY == endY)
   {
-    if (startX < endX)
+    while (startX != endX)
     {
-      while (startX <= endX)
-      {
-        map[startY][startX]++;
-        startX++;
-      }
+      map[startY][startX]++;
+      startX > endX ? startX-- : startX++;
     }
-    else
-    {
-      while (startX >= endX)
-      {
-        map[startY][startX]++;
-        startX--;
-      }
-    }
+    map[startY][startX]++;
   }
   return;
 }
 
 void checkDiagonals(int startX, int endX, int startY, int endY, std::vector<std::vector<int>> &map)
 {
-  if (startX > endX)
+
+  while (startX != endX)
   {
-    if (startY > endY)
-    {
-      while (startX >= endX)
-      {
-        map[startY][startX]++;
-        startX--;
-        startY--;
-      }
-    }
-    else
-    {
-      while (startX >= endX)
-      {
-        map[startY][startX]++;
-        startX--;
-        startY++;
-      }
-    }
+    map[startY][startX]++;
+    startX > endX ? startX-- : startX++;
+    startY > endY ? startY-- : startY++;
   }
-  else
-  {
-    if (startY > endY)
-    {
-      while (startX <= endX)
-      {
-        map[startY][startX]++;
-        startX++;
-        startY--;
-      }
-    }
-    else
-    {
-      while (startX <= endX)
-      {
-        map[startY][startX]++;
-        startX++;
-        startY++;
-      }
-    }
-  }
+  map[startY][startX]++;
+
   return;
 }
 
