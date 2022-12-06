@@ -56,7 +56,7 @@ def solveSecond(file):
                     result+=charVal
                     iter = -1
                     first=''
-                    secondPass=[] 
+                    secondPass=[]
     print('Second result is:',result)
 
 solveFirst(fileName)
