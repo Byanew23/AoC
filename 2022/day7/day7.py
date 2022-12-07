@@ -33,11 +33,9 @@ def solveFirst(file, showRes):
                 totalSpace += int(size)
     # Account for last directories after end of commands
     while len(currentDir) >= 1:
-        print(currentDir, sizes['/'], sizes[currentDir[-1]])
         prev = currentDir.pop()
         if len(currentDir) == 1:
             sizes['/'] += sizes[prev]
-            print('last loop?', sizes['/'])
             break
         else:
             sizes[currentDir[-1]] += sizes[prev]
@@ -57,8 +55,6 @@ def solveSecond(file):
     neededSpace = updateSpace - freeSpace
     res = totalSpace
 
-    print(usedSpace)
-
     if freeSpace >= usedSpace:
         print('There is already enough space!')
         return
@@ -67,7 +63,6 @@ def solveSecond(file):
         if neededSpace <= sizes[key] <= res:
             res = sizes[key]
 
-    print(freeSpace, neededSpace, sizes['/'])
     print('The solution is:', res)
 
 solveFirst(fileName, True)
